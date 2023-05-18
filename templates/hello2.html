@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+        {% load static %}
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
+{% block content %}
+<br>
+<br>
+<br>
+        <image src="{% static 'images/ball.png' %}" alt="歡迎" width="32" height="32"></image>
+        <h1 class="info">歡迎: Test</h1>
+        <h2>時間: {{now}}</h2>
+        <!--          字典.key      -->
+        <h2>點數一: {{dict.dice1}}</h2>
+        <h2>點數二: {{dict.dice2}}</h2>
+        <h2>點數三: {{dict.dice3}}</h2>
+        <h2>次數: {{local_times}}</h2>
+        <h2>等第: 
+            {% if score >= 90 %}
+                A
+            {% elif score >= 80 %}
+                B
+            {% elif score >= 70 %}
+                C
+            {% elif score >= 60 %}
+                D
+            {% else %}
+                E
+            {% endif %}
+             / {{score}}
+        </h2>
+{% endblock %}

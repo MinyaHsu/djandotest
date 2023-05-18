@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}刪除學生資料{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<h2>刪除學生資料</h2>
+<form action="." method="POST" name="form1">
+    {% csrf_token %}
+    <div>請輸入學號: <input type="text" name="stdID" /></div>
+    <div><input type="submit" name="button" id="button" value="確定刪除" /></div>
+    <span style="color:red">{{ mess }}</span>
+</form>
+
+{% endblock %}

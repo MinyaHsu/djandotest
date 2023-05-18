@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}我的首頁{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+<!--製作表單-->
+<form action="/register/" method="POST" name="form1">
+    {% csrf_token %}
+    <h2>註冊帳號</h2>
+    <table class="table">
+        <tr>
+            <th>帳號</th><td><input type="text" name="username" /></td>
+        </tr>
+        <tr>
+            <th>密碼</th><td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+            <th>姓</th><td><input type="text" name="lastname" /></td>
+        </tr>
+        <tr>
+            <th>名</th><td><input type="text" name="firstname" /></td>
+        </tr>
+        <tr>
+            <th>信箱</th><td><input type="text" name="email" /></td>
+        </tr>
+        <tr>
+            <th colspan="2"><input type="reset" name="button1" id="button1" value="重設">
+                <input type="submit" name="button2" id="button2" value="送出">
+            </th>
+        </tr>
+    </table>
+    <span style="color:red">{{mess}}</span>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}類別表單驗證{% endblock %}
+{% block content %}
+<br>
+<br>
+<br>
+    <h2>基本表單驗證</h2>
+    <form action="/post/" method="POST" name="stdform">
+        {% csrf_token %}
+        <table class="table">
+            <tr>
+                <th>姓名</th><td>{{  stdform.stdName  }}</td>
+            </tr>
+            <tr>
+                <th>學號</th><td>{{  stdform.stdID  }}</td>
+            </tr>
+            <tr>
+                <th>性別</th><td><input type="radio" name="stdSex" id="stdSex1" value="M" checked="checked" />男生
+                    <input type="radio" name="stdSex" id="stdSex2" value="F" />女生
+                </td>
+            </tr>
+            <tr>
+                <th>生日</th><td>{{  stdform.stdBirth  }}</td>
+            </tr>
+            <tr>
+                <th>電話</th><td>{{  stdform.stdPhone  }}</td>
+            </tr>
+            <tr>
+                <th>信箱</th><td>{{  stdform.stdEmail  }}</td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="reset" name="button1" id="button1" value="重設">
+                    <input type="submit" name="button2" id="button2" value="送出">
+                </th>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
